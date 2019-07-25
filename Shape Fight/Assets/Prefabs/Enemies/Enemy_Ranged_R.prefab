@@ -652,4 +652,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   movementSpeed: 5
-  viewDistance: 7
+  viewDistance: 10

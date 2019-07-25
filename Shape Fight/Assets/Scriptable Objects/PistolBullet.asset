@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PistolBullet
   m_EditorClassIdentifier: 
   name: Pistol Bullet
-  reloadSpeed: 0.5
-  bulletSpeed: 20
   damage: 50
-  gravity: 0.8
-  range: 99
+  reloadSpeed: 0.5
+  bulletSpeed: 25
+  recoil: 0
+  gravity: 1

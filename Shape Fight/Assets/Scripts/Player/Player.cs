@@ -11,7 +11,8 @@ public class Player : MonoBehaviour
 
 	public Color color;
 	public Color hurtColor;
-	public float health;
+	public float startingHealth;
+	[HideInInspector] public float health;
 
 	public Image healthBar;
 	public Color maxColor;
@@ -23,12 +24,14 @@ public class Player : MonoBehaviour
     {
 		spawnPoint = GameObject.FindGameObjectWithTag("Respawn");
 
+		health = startingHealth;
+
 		currentColor = GetComponent<SpriteRenderer>();
     }
 
 	public void Update()
 	{
-		healthBar.fillAmount = health / 100f;
+		healthBar.fillAmount = health / startingHealth;
 		healthBar.color = Color.Lerp(minColor, maxColor, healthBar.fillAmount);
 
 		if (health <= 0)
@@ -63,7 +66,7 @@ public class Player : MonoBehaviour
 
 		gameObject.SetActive(false);
 
-		health += 100;
+		health = startingHealth;
 		
 		Invoke("Respawn", 1f);
 	}

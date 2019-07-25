@@ -582,7 +582,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   movementSpeed: 5
-  viewDistance: 7
+  viewDistance: 10
 --- !u!1 &8175024972334902099
 GameObject:
   m_ObjectHideFlags: 0

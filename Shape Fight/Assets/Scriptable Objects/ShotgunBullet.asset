@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: ShotgunBullet
   m_EditorClassIdentifier: 
   name: Shotgun Bullet
+  damage: 30
   reloadSpeed: 1
   bulletSpeed: 25
-  damage: 30
-  gravity: 1
-  range: 2
+  recoil: 0
+  gravity: 0.8
