@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class Enemy : MonoBehaviour
+public class MainEnemy : MonoBehaviour
 {
     public ParticleSystem deathEffect;
 

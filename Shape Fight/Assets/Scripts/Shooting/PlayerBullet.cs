@@ -25,7 +25,7 @@ public class PlayerBullet : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            Enemy enemy = other.GetComponent<Enemy>();
+            MainEnemy enemy = other.GetComponent<MainEnemy>();
 
             enemy.health -= damage;
             enemy.Hurt();
