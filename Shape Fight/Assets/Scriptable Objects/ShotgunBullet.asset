@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ShotgunBullet
   m_EditorClassIdentifier: 
   name: Shotgun Bullet
-  damage: 30
+  damage: 35
   reloadSpeed: 1
   bulletSpeed: 25
   recoil: 0

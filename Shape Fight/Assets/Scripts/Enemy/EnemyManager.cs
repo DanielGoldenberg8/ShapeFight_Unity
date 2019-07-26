@@ -6,7 +6,7 @@ public class EnemyManager : MonoBehaviour
     public GameObject orangeEnemy;
     public GameObject redEnemy;
 
-    private GameObject chosenEnemy;
+    [HideInInspector] public GameObject chosenEnemy;
 
     [HideInInspector] public float damage;
     [HideInInspector] public float speed;
@@ -28,20 +28,14 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
-    void Update()
+    public void SetEnemyStats()
     {
-        if (Input.GetMouseButtonDown(1))
-        {
-            ChooseEnemy();
+        ChooseEnemy();
 
-            damage = chosenEnemy.GetComponent<RangedEnemy>().bulletDamage;
-            speed = chosenEnemy.GetComponent<RangedEnemy>().bulletSpeed;
+        damage = chosenEnemy.GetComponent<RangedEnemy>().bulletDamage;
+        speed = chosenEnemy.GetComponent<RangedEnemy>().bulletSpeed;
 
-            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Instantiate(chosenEnemy, mousePos, Quaternion.identity); 
-
-            MessageManager.instance.SendMessageToChat("Enemy spawned!", Message.Color.green);
-        }
+        MessageManager.instance.SendMessageToChat("Enemy spawned!", Message.Color.green);
     }   
 
     void ChooseEnemy()

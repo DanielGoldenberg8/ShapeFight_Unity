@@ -101,7 +101,7 @@ public class PlayerShooting : MonoBehaviour
         {
             currentWeapon = Weapon.grenadeLauncher;
 
-            MessageManager.instance.SendMessageToChat("Grenade launcher selected", Message.Color.blue);
+            MessageManager.instance.SendMessageToChat("SUPER GUN selected", Message.Color.yellow);
         }
     }
 

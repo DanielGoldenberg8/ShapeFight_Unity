@@ -272,8 +272,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletDeath: {fileID: 8744952917259650372, guid: f23128ec44b2b47769325db06915f1dd,
     type: 3}
-  speed: 20
-  damage: 15
 --- !u!1 &8495488200528338473
 GameObject:
   m_ObjectHideFlags: 0

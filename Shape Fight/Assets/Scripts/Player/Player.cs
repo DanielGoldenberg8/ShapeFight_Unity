@@ -20,6 +20,14 @@ public class Player : MonoBehaviour
 
 	private GameObject spawnPoint;
 
+	void Awake()
+	{
+		if (playerName == "")
+		{
+			playerName = "Player1";
+		}
+	}
+
 	void Start()
     {
 		spawnPoint = GameObject.FindGameObjectWithTag("Respawn");

@@ -694,7 +694,7 @@ MonoBehaviour:
   deathEffect: {fileID: 3043361898633080310, guid: 704b28ddd7ae6446a9c68f7daf9d6572,
     type: 3}
   color: {r: 0, g: 0, b: 0, a: 1}
-  hurtColor: {r: 0.41568628, g: 0.41568628, b: 0.41568628, a: 1}
+  hurtColor: {r: 0.5803922, g: 0.5803922, b: 0.5803922, a: 1}
   startingHealth: 100
   health: 100
   healthBar: {fileID: 1632302857}

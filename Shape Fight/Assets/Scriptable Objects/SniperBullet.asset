@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SniperBullet
   m_EditorClassIdentifier: 
   name: Sniper Bullet
-  damage: 100
+  damage: 150
   reloadSpeed: 1.5
   bulletSpeed: 55
   recoil: 0
