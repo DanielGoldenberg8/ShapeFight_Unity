@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: AssaultRifleBullet
   m_EditorClassIdentifier: 
   name: Assault Rifle Bullet
-  reloadSpeed: 0.2
-  bulletSpeed: 30
   damage: 25
+  reloadSpeed: 0.15
+  bulletSpeed: 30
+  recoil: 0
   gravity: 0.5
-  range: 99

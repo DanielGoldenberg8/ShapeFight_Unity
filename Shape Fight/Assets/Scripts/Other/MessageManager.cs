@@ -17,7 +17,6 @@ public class MessageManager : MonoBehaviour
 
     private List<Message> messageList = new List<Message>();
 
-    private int maxMsgs = 16;
     private int message;
 
     public static MessageManager instance;
