@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 
-public class RangedEnemyMovement : MonoBehaviour
+public class EnemyMovement : MonoBehaviour
 {
 	public Transform groundCheck;
 	public LayerMask whatIsGround;
 
 	public float movementSpeed;
-	public float viewDistance;
+	public float maxDistance;
 
 	private Rigidbody2D rb;
 	private Transform player;
@@ -26,7 +26,7 @@ public class RangedEnemyMovement : MonoBehaviour
 
 		float distance = Vector2.Distance(transform.position, player.position);
 
-		if ((distance >= viewDistance) && grounded)
+		if ((distance >= maxDistance) && grounded)
 		{
 			if (relativePlayerPos.x > 0.0)
 			{
@@ -37,7 +37,7 @@ public class RangedEnemyMovement : MonoBehaviour
 				rb.velocity = -transform.right * movementSpeed;
 			}
 		}
-		else if ((distance <= viewDistance) && grounded)
+		else if ((distance <= maxDistance) && grounded)
 		{
 			rb.velocity = transform.right * 0;
 		}
