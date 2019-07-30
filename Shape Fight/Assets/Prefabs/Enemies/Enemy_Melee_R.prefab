@@ -372,7 +372,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8420260611413032999
 Transform:
   m_ObjectHideFlags: 0
@@ -539,8 +539,8 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
-  movementSpeed: 8
-  maxDistance: 3
+  movementSpeed: 9
+  maxDistance: 0
 --- !u!114 &1959120510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -554,3 +554,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 80
+  deathEffect: {fileID: 8385457844028546463, guid: f74f99ef2300c4c91aa839186d3b9c31,
+    type: 3}

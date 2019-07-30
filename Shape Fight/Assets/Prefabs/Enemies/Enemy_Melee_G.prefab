@@ -259,8 +259,8 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
-  movementSpeed: 10
-  maxDistance: 3
+  movementSpeed: 11
+  maxDistance: 0
 --- !u!114 &1628390448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,6 +274,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 40
+  deathEffect: {fileID: 8385457844028546463, guid: da4d8ab1e4d6d467ea9e626fc65e555f,
+    type: 3}
 --- !u!1 &7758648232324434714
 GameObject:
   m_ObjectHideFlags: 0

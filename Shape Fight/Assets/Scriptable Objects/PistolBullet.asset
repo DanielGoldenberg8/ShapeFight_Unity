@@ -15,6 +15,6 @@ MonoBehaviour:
   name: Pistol Bullet
   damage: 50
   reloadSpeed: 0.5
-  bulletSpeed: 25
+  bulletSpeed: 27
   recoil: 0
-  gravity: 1
+  gravity: 0.9

@@ -3,7 +3,8 @@
 public class MeleeEnemy : MonoBehaviour
 {
     public float damage;
-    
+    public GameObject deathEffect;
+
     private float reloadTimer;
 
     void OnTriggerEnter2D(Collider2D other)
@@ -14,6 +15,8 @@ public class MeleeEnemy : MonoBehaviour
 
             player.health -= damage;
             player.Hurt();
+
+            Instantiate(deathEffect, transform.position, transform.rotation);
 
             Destroy(gameObject);
         }

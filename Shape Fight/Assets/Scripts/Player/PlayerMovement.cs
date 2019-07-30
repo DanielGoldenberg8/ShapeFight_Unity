@@ -14,8 +14,6 @@ public class PlayerMovement : MonoBehaviour
 	private float horizontalMove;
 	private bool grounded;
 	
-	private float jumpRememberTime = 0.05f;
-	private float jumpRemember;
 	private float groundedRememberTime = 0.15f;
 	private float groundedRemember;
 
@@ -38,16 +36,8 @@ public class PlayerMovement : MonoBehaviour
 			groundedRemember = groundedRememberTime;
 		}
 
-		jumpRemember -= Time.deltaTime;
-
-		if (Input.GetButtonDown("Jump"))
+		if (Input.GetButton("Jump") && (groundedRemember > 0))
 		{
-			jumpRemember = jumpRememberTime;
-		}
-
-		if ((jumpRemember > 0) && (groundedRemember > 0))
-		{
-			jumpRemember = 0;
 			groundedRemember = 0;
 
 			Jump();

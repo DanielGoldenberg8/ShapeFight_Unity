@@ -2,9 +2,15 @@
 
 public class EnemyManager : MonoBehaviour
 {
-    public GameObject greenEnemy;
-    public GameObject orangeEnemy;
-    public GameObject redEnemy;
+    public GameObject greenRangedEnemy;
+    public GameObject orangeRangedEnemy;
+    public GameObject redRangedEnemy;
+
+    [Space]
+
+    public GameObject greenMeleeEnemy;
+    public GameObject orangeMeleeEnemy;
+    public GameObject redMeleeEnemy;
 
     [HideInInspector] public GameObject chosenEnemy;
 
@@ -28,31 +34,58 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
-    public void SetEnemyStats()
+    public void SetRangedEnemyStats()
     {
-        ChooseEnemy();
+        ChooseRangedEnemy();
 
         damage = chosenEnemy.GetComponent<RangedEnemy>().bulletDamage;
         speed = chosenEnemy.GetComponent<RangedEnemy>().bulletSpeed;
 
-        MessageManager.instance.SendMessageToChat("Enemy spawned!", Message.Color.green);
-    }   
+        MessageManager.instance.SendMessageToChat("Ranged enemy spawned!", Message.Color.green);
+    } 
 
-    void ChooseEnemy()
+    public void SetMeleeEnemyStats()
+    {
+        ChooseMeleeEnemy();
+
+        damage = chosenEnemy.GetComponent<MeleeEnemy>().damage;
+
+        MessageManager.instance.SendMessageToChat("Melee enemy spawned!", Message.Color.green);
+    }  
+
+    void ChooseRangedEnemy()
     {
         float num = Mathf.Round(Random.Range(0f, 100f));
 
         if (num >= 90)
         {
-            chosenEnemy = redEnemy;
+            chosenEnemy = redRangedEnemy;
         }
         else if (num >= 50 && num < 90)
         {
-            chosenEnemy = orangeEnemy;
+            chosenEnemy = orangeRangedEnemy;
         }
         else if (num < 50)
         {
-            chosenEnemy = greenEnemy;
+            chosenEnemy = greenRangedEnemy;
+        }
+    }
+
+    void ChooseMeleeEnemy()
+    {
+        float num = Mathf.Round(Random.Range(0f, 100f));
+
+        if (num >= 90)
+        {
+            chosenEnemy = redMeleeEnemy;
+        }
+        else if (num >= 50 && num < 90)
+        {
+            chosenEnemy = orangeMeleeEnemy;
+        }
+        else if (num < 50)
+        {
+            chosenEnemy = greenMeleeEnemy;
         }
     }
 }

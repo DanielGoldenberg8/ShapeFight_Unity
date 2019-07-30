@@ -25,8 +25,7 @@ public class EnemySpawning : MonoBehaviour
         while (x == 1)
         {   
             GetRandomPos();
-            
-            EnemyManager.instance.SetEnemyStats();
+            ChooseEnemy();
 
             Instantiate(EnemyManager.instance.chosenEnemy, spawnPos, Quaternion.identity);
 
@@ -46,5 +45,19 @@ public class EnemySpawning : MonoBehaviour
         float randomY = Random.Range(minY, maxY);
 
         spawnPos = new Vector2(randomX, randomY);
+    }
+
+    void ChooseEnemy()
+    {
+        float num = Mathf.Round(Random.Range(0f, 100f));
+
+        if (num >= 50)
+        {
+            EnemyManager.instance.SetRangedEnemyStats();
+        }
+        else if (num >= 0 && num < 50)
+        {
+            EnemyManager.instance.SetMeleeEnemyStats();
+        }
     }
 }
