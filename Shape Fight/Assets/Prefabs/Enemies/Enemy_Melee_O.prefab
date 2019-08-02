@@ -509,7 +509,7 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
-  movementSpeed: 10
+  movementSpeed: 9.5
   maxDistance: 0
 --- !u!114 &1121565563
 MonoBehaviour:
@@ -523,7 +523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecbbb1a1ba7cf477a9f416bd36ac5ed9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 55
+  damage: 45
   deathEffect: {fileID: 8385457844028546463, guid: b950981259f3748c0a2153aeaa23704d,
     type: 3}
 --- !u!1 &6483991101570884252

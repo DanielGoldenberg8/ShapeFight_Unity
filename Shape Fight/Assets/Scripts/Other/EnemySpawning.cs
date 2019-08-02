@@ -51,11 +51,11 @@ public class EnemySpawning : MonoBehaviour
     {
         float num = Mathf.Round(Random.Range(0f, 100f));
 
-        if (num >= 50)
+        if (num >= 40)
         {
             EnemyManager.instance.SetRangedEnemyStats();
         }
-        else if (num >= 0 && num < 50)
+        else if (num >= 0 && num < 40)
         {
             EnemyManager.instance.SetMeleeEnemyStats();
         }

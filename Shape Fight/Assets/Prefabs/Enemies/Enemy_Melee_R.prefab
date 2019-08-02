@@ -553,6 +553,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecbbb1a1ba7cf477a9f416bd36ac5ed9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 80
+  damage: 75
   deathEffect: {fileID: 8385457844028546463, guid: f74f99ef2300c4c91aa839186d3b9c31,
     type: 3}
