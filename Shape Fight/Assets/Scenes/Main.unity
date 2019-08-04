@@ -3434,7 +3434,7 @@ GameObject:
   m_Component:
   - component: {fileID: 825420885}
   m_Layer: 0
-  m_Name: '-----------------------------------'
+  m_Name: '-------------------------------------'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4509,11 +4509,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 7}
-      - {x: -18, y: 7}
-      - {x: -18, y: -6}
-      - {x: 18, y: -6}
-      - {x: 18, y: 7}
+    - - {x: 0, y: 8}
+      - {x: -10, y: 8}
+      - {x: -10, y: -8}
+      - {x: 10, y: -8}
+      - {x: 10, y: 8}
 --- !u!4 &1193493048
 Transform:
   m_ObjectHideFlags: 0
@@ -4632,7 +4632,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1236303103}
   m_Layer: 0
-  m_Name: '----------------------------------- '
+  m_Name: '-------------------------------------'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

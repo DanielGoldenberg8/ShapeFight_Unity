@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
 			groundedRemember = groundedRememberTime;
 		}
 
-		if (Input.GetButton("Jump") && (groundedRemember > 0))
+		if (Input.GetButtonDown("Jump") && (groundedRemember > 0))
 		{
 			groundedRemember = 0;
 
@@ -58,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
 	void Jump()
 	{
 		rb.velocity = new Vector2(0f, jumpHeight);
+		
 		AudioManager.instance.Play("Jump");
 	}
 }
