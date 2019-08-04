@@ -11,8 +11,8 @@ public class EnemyBullet : MonoBehaviour
 
     void Start()
     {
-        damage = GameObject.FindGameObjectWithTag("EnemyManager").GetComponent<EnemyManager>().damage;
-        speed = GameObject.FindGameObjectWithTag("EnemyManager").GetComponent<EnemyManager>().speed;
+        damage = EnemyManager.instance.damage;
+        speed = EnemyManager.instance.speed;
 
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = transform.right * speed;

@@ -2,12 +2,16 @@
 
 public class FollowTarget : MonoBehaviour 
 {
-	private Vector3 targetPos;
-	private float interpVelocity;
 	public GameObject target;
 	public float speed = 60;
+
+	public float leftBoundary;
+	public float rightBoundary;
 	
 	public Vector3 offset = new Vector3(0, 2, 0);
+
+	private Vector3 targetPos;
+	private float interpVelocity;
 
 	void Start() 
 	{
@@ -16,18 +20,22 @@ public class FollowTarget : MonoBehaviour
 	
 	void FixedUpdate() 
 	{
-		if (target)
+		if (target != null)
 		{
-			Vector3 posNoZ = transform.position;
-			posNoZ.z = target.transform.position.z;
+			if ((target.transform.position.x > leftBoundary) && (target.transform.position.x < rightBoundary))
+			{
+				Vector3 posNoZ = transform.position;
 
-			Vector3 targetDirection = (target.transform.position - posNoZ);
+				posNoZ.z = target.transform.position.z;
 
-			interpVelocity = targetDirection.magnitude * speed;
+				Vector3 targetDirection = (target.transform.position - posNoZ);
 
-			targetPos = transform.position + (targetDirection.normalized * interpVelocity * Time.deltaTime); 
+				interpVelocity = targetDirection.magnitude * speed;
 
-			transform.position = Vector3.Lerp(transform.position, targetPos + offset, 0.25f);
+				targetPos = transform.position + (targetDirection.normalized * interpVelocity * Time.deltaTime); 
+
+				transform.position = Vector3.Lerp(transform.position, targetPos + offset, 0.25f);
+			}
 		}
 	}
 }

@@ -1,75 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &29397871
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 29397872}
-  - component: {fileID: 29397873}
-  m_Layer: 9
-  m_Name: Point Light 2D
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &29397872
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 29397871}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 57937991590518470}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &29397873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 29397871}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_LightType: 3
-  m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 0.9882353, b: 0.9764706, a: 1}
-  m_Intensity: 0.5
-  m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: 00000000
-  m_LightCookieSprite: {fileID: 0}
-  m_UseNormalMap: 0
-  m_LightOrder: 0
-  m_AlphaBlendOnOverlap: 0
-  m_PointLightInnerAngle: 360
-  m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 1.5
-  m_PointLightDistance: 3
-  m_PointLightQuality: 1
-  m_ShapeLightParametricSides: 5
-  m_ShapeLightParametricAngleOffset: 0
-  m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 0.5
-  m_ShapeLightFalloffOffset: {x: 0, y: 0}
-  m_ShapePath:
-  - {x: -0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: 0.5, z: 0}
-  - {x: -0.5, y: 0.5, z: 0}
 --- !u!1 &62771214
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,7 +579,6 @@ Transform:
   - {fileID: 1198894711}
   - {fileID: 57937991188355100}
   - {fileID: 2102902915}
-  - {fileID: 29397872}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -768,6 +697,7 @@ MonoBehaviour:
   hurtColor: {r: 0.5803922, g: 0.5803922, b: 0.5803922, a: 1}
   startingHealth: 100
   health: 100
+  isDead: 0
   healthBar: {fileID: 1632302857}
   maxColor: {r: 0, g: 1, b: 0.11764706, a: 0.6509804}
   minColor: {r: 0.9843137, g: 0, b: 0.047058824, a: 0.6509804}
@@ -805,6 +735,7 @@ MonoBehaviour:
   blastPoint1: {fileID: 136220924}
   blastPoint2: {fileID: 1859818255}
   blastPoint3: {fileID: 1565669723}
+  blaster: {fileID: 2102902913}
   bullet: {fileID: 2314028388749427295, guid: d86409fe511534bdf9d69baf27392f40, type: 3}
   pistol: {fileID: 11400000, guid: 9f6bae03ebf6341169f2ed0c799e9a55, type: 2}
   rifle: {fileID: 11400000, guid: 9fbbbe4a85d5a4b97bc75b8448ae440a, type: 2}
@@ -816,3 +747,5 @@ MonoBehaviour:
   bulletDamage: 0
   bulletRecoil: 0
   bulletGravity: 0
+  blasterSizeX: 0
+  blasterSizeY: 0

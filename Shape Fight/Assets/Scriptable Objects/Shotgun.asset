@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afbb6271b77874809a1cb2a293ef6f49, type: 3}
   m_Name: ShotgunBullet
   m_EditorClassIdentifier: 
-  name: Shotgun Bullet
   damage: 35
   reloadSpeed: 1
   bulletSpeed: 25
   recoil: 0
   gravity: 0.8
+  sizeX: 0.65
+  sizeY: 0.35

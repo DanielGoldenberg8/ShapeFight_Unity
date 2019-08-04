@@ -12,7 +12,9 @@ public class Player : MonoBehaviour
 	public Color color;
 	public Color hurtColor;
 	public float startingHealth;
+
 	[HideInInspector] public float health;
+	[HideInInspector] public bool isDead = false;
 
 	public Image healthBar;
 	public Color maxColor;
@@ -24,7 +26,7 @@ public class Player : MonoBehaviour
 	{
 		if (playerName == "")
 		{
-			playerName = "Player1";
+			playerName = "Player 1";
 		}
 	}
 
@@ -66,6 +68,8 @@ public class Player : MonoBehaviour
 
 	void Die()
 	{
+		isDead = true;
+
 		Instantiate(deathEffect, transform.position, Quaternion.identity);
 
 		AnimationManager.instance.ShakeAnim();
@@ -81,8 +85,12 @@ public class Player : MonoBehaviour
 
 	void Respawn()
 	{
+		isDead = false;
+
 		transform.position = spawnPoint.transform.position;
+
 		currentColor.color = color;
+
 		gameObject.SetActive(true);
 	}
 }

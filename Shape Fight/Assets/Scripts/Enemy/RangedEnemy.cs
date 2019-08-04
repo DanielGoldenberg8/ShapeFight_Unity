@@ -12,6 +12,8 @@ public class RangedEnemy : MonoBehaviour
     public float reloadSpeed;
     public float bulletSpeed;
     public float bulletDamage;
+
+    public bool lockedOn;
     
     private float reloadTimer;
 
@@ -35,20 +37,43 @@ public class RangedEnemy : MonoBehaviour
             reloadTimer = 0;
         }
 
-        if (reloadTimer == 0)
+        if (lockedOn)
         {
-            reloadTimer = reloadSpeed;
-            Invoke("Shoot", 2f);
+            if (reloadTimer == 0)
+            {
+                reloadTimer = reloadSpeed;
+                Shoot();
+            }
+        }
+    }
+
+    void FixedUpdate()
+    {
+        RaycastHit2D hitInfo = Physics2D.Raycast(blastPoint.position, transform.right);
+
+        if (hitInfo)
+        {
+            if (hitInfo.transform.CompareTag("Player"))
+            {
+                lockedOn = true;
+            }
+            else 
+            {
+                lockedOn = false;
+            }
         }
     }
 
     void RotateBlaster()
     {
-        Vector2 dir = player.transform.position - blaster.position;
-        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        Quaternion rot = Quaternion.AngleAxis(angle, Vector3.forward);
+        if (player.GetComponent<Player>().isDead == false)
+        {
+            Vector2 dir = player.transform.position - blaster.position;
+            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            Quaternion rot = Quaternion.AngleAxis(angle, Vector3.forward);
 
-        blaster.rotation = Quaternion.Slerp(blaster.rotation, rot, rotSpeed * Time.deltaTime);
+            blaster.rotation = Quaternion.Slerp(blaster.rotation, rot, rotSpeed * Time.deltaTime);
+        }
     }
 
     void Shoot()

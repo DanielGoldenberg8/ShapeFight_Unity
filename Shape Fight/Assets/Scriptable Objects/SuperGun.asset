@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: afbb6271b77874809a1cb2a293ef6f49, type: 3}
-  m_Name: SniperBullet
+  m_Name: SuperGunBullet
   m_EditorClassIdentifier: 
-  name: Sniper Bullet
-  damage: 150
-  reloadSpeed: 1.5
-  bulletSpeed: 55
+  damage: 100
+  reloadSpeed: 0.05
+  bulletSpeed: 30
   recoil: 0
-  gravity: 0.4
+  gravity: 0
+  sizeX: 0.7
+  sizeY: 0.3
