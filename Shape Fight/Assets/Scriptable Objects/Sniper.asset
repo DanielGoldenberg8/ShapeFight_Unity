@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: afbb6271b77874809a1cb2a293ef6f49, type: 3}
-  m_Name: SniperBullet
+  m_Name: Sniper
   m_EditorClassIdentifier: 
   damage: 150
   reloadSpeed: 1.5

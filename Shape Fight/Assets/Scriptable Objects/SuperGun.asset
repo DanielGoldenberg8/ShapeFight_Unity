@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: afbb6271b77874809a1cb2a293ef6f49, type: 3}
-  m_Name: SuperGunBullet
+  m_Name: SuperGun
   m_EditorClassIdentifier: 
   damage: 100
   reloadSpeed: 0.05

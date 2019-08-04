@@ -19,6 +19,7 @@ public class PlayerShooting : MonoBehaviour
     public Weapon currentWeapon;
 
     private float reloadSpeed;
+    
     [HideInInspector] public float bulletSpeed;
     [HideInInspector] public float bulletDamage;
     [HideInInspector] public float bulletRecoil;
