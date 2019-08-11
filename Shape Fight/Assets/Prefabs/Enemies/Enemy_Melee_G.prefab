@@ -84,8 +84,8 @@ GameObject:
   - component: {fileID: 6662544916378222924}
   - component: {fileID: 8826319301817499668}
   - component: {fileID: 4698701716292131591}
-  - component: {fileID: 1529841119012271417}
   - component: {fileID: 1628390448}
+  - component: {fileID: -5767431206020656764}
   m_Layer: 10
   m_Name: Enemy_Melee_G
   m_TagString: Enemy
@@ -223,7 +223,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.45
+  m_Radius: 0.55
 --- !u!114 &4698701716292131591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,24 +243,6 @@ MonoBehaviour:
   minSize: 0.75
   maxSize: 1.1
   health: 100
---- !u!114 &1529841119012271417
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6862574452863809276}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc067877d601e4004ae5f68c7f93ee5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  groundCheck: {fileID: 2295030991599105444}
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 256
-  movementSpeed: 10
-  maxDistance: 0
 --- !u!114 &1628390448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,6 +258,23 @@ MonoBehaviour:
   damage: 30
   deathEffect: {fileID: 8385457844028546463, guid: da4d8ab1e4d6d467ea9e626fc65e555f,
     type: 3}
+--- !u!114 &-5767431206020656764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6862574452863809276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc067877d601e4004ae5f68c7f93ee5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 256
+  movementSpeed: 90
+  maxDistance: 0.5
 --- !u!1 &7758648232324434714
 GameObject:
   m_ObjectHideFlags: 0

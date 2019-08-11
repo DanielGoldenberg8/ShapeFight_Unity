@@ -389,7 +389,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3787670701661335880}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3787670701661335886
 GameObject:
@@ -405,7 +405,7 @@ GameObject:
   - component: {fileID: 3787670701661335883}
   - component: {fileID: 3069595832231648437}
   - component: {fileID: 419201478382260502}
-  - component: {fileID: 9055308682436368646}
+  - component: {fileID: 6163005945625810850}
   m_Layer: 10
   m_Name: Enemy_Ranged_G
   m_TagString: Enemy
@@ -425,8 +425,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1356432097}
-  - {fileID: 6207818256976187653}
   - {fileID: 8391850921163059734}
+  - {fileID: 6207818256976187653}
   - {fileID: 2106110564}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -565,7 +565,8 @@ MonoBehaviour:
   reloadSpeed: 1.5
   bulletSpeed: 20
   bulletDamage: 15
---- !u!114 &9055308682436368646
+  lockedOn: 0
+--- !u!114 &6163005945625810850
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -577,12 +578,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc067877d601e4004ae5f68c7f93ee5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundCheck: {fileID: 8391850921163059734}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
-  movementSpeed: 8
-  maxDistance: 10
+  movementSpeed: 60
+  maxDistance: 7
 --- !u!1 &8175024972334902099
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,7 +612,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3787670701661335880}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1797489298835239936
 MonoBehaviour:

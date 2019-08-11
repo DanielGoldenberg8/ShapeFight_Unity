@@ -2,7 +2,7 @@
 
 public class EnemyMovement : MonoBehaviour
 {
-	public Transform groundCheck;
+	private Transform groundCheck;
 	public LayerMask whatIsGround;
 
 	public float movementSpeed;
@@ -13,9 +13,12 @@ public class EnemyMovement : MonoBehaviour
 	private Vector3 velocity = Vector3.zero;
 	private bool grounded;
 
-	void Awake()
+	void Start()
 	{
 		rb = GetComponent<Rigidbody2D>();
+		groundCheck = transform.Find("groundCheck");
+
+		movementSpeed = movementSpeed * 10;
 
 		player = GameObject.FindGameObjectWithTag("Player").transform;
 	}
@@ -30,11 +33,11 @@ public class EnemyMovement : MonoBehaviour
 		{
 			if (relativePlayerPos.x > 0.0)
 			{
-				rb.velocity = transform.right * movementSpeed;
+				rb.velocity = transform.right * movementSpeed * Time.deltaTime;
 			}
 			else if (relativePlayerPos.x < 0.0)
 			{
-				rb.velocity = -transform.right * movementSpeed;
+				rb.velocity = -transform.right * movementSpeed * Time.deltaTime;
 			}
 		}
 		else if ((distance <= maxDistance) && grounded)
