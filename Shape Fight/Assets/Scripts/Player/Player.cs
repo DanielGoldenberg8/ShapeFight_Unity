@@ -5,14 +5,13 @@ using System.Collections;
 public class Player : MonoBehaviour
 {
 	public string playerName;
-	private int playerID;
+
+	private Color color = Color.black;
+	private Color hurtColor = Color.white;
+	public float startingHealth;
 
 	public ParticleSystem deathEffect;
 	private SpriteRenderer currentColor;
-
-	public Color color;
-	public Color hurtColor;
-	public float startingHealth;
 
 	[HideInInspector] public float health;
 	[HideInInspector] public bool isDead = false;
@@ -29,11 +28,6 @@ public class Player : MonoBehaviour
 		{
 			playerName = "Player";
 		}
-
-		playerID = Random.Range(0, 1000);
-
-		print(playerName);
-		print(playerID);
 	}
 
 	void Start()
@@ -43,6 +37,21 @@ public class Player : MonoBehaviour
 		health = startingHealth;
 
 		currentColor = GetComponent<SpriteRenderer>();
+
+		float num = Mathf.CeilToInt(Random.Range(0f, 3f));
+
+		if (num == 1)
+        {
+            AudioManager.instance.Play("Theme1");
+        }
+        else if (num == 2)
+        {
+            AudioManager.instance.Play("Theme2");
+        }
+        else if (num == 3)
+        {
+            AudioManager.instance.Play("Theme3");
+        }
     }
 
 	public void Update()
@@ -92,6 +101,8 @@ public class Player : MonoBehaviour
 	void Respawn()
 	{
 		isDead = false;
+
+		Scoreboard.instance.totalScore = 0;
 
 		transform.position = spawnPoint.transform.position;
 

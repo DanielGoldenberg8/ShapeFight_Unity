@@ -240,9 +240,10 @@ MonoBehaviour:
     type: 3}
   hurtColor: {r: 0.8039216, g: 0.99607843, b: 0.8666667, a: 1}
   healthBar: {fileID: 7758648232403336420}
+  health: 100
   minSize: 0.75
   maxSize: 1.1
-  health: 100
+  killScore: 300
 --- !u!114 &1628390448
 MonoBehaviour:
   m_ObjectHideFlags: 0

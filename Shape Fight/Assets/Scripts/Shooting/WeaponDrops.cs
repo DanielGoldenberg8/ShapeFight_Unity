@@ -2,12 +2,12 @@
 
 public class WeaponDrops : MonoBehaviour
 {
-    public GameObject pistol;
     public GameObject rifle;
     public GameObject shotgun;
     public GameObject sniper;
+    public GameObject nothing;
 
-    [HideInInspector] public GameObject chosenWeapon; 
+    [HideInInspector] public GameObject chosenDrop; 
 
     public static WeaponDrops instance;
 
@@ -28,23 +28,28 @@ public class WeaponDrops : MonoBehaviour
 
     public void ChooseDrop()
     {
-        int num = Mathf.RoundToInt(Random.Range(0f, 3f));
+        int num = Mathf.CeilToInt(Random.Range(0f, 100f));
 
-        if (num == 0)
+        if (num <= 25)
         {
-            chosenWeapon = pistol;
+            int weapon = Mathf.CeilToInt(Random.Range(1f, 4f));
+
+            if (weapon == 1)
+            {
+                chosenDrop = rifle;
+            }
+            if (weapon == 2)
+            {
+                chosenDrop = shotgun;
+            }
+            if (weapon == 3)
+            {
+                chosenDrop = sniper;
+            }
         }
-        else if (num == 1)
+        else
         {
-            chosenWeapon = rifle;
-        }
-        else if (num == 2)
-        {
-            chosenWeapon = shotgun;
-        }
-        else if (num == 3)
-        {
-            chosenWeapon = sniper;
+            chosenDrop = nothing;
         }
     }
 }

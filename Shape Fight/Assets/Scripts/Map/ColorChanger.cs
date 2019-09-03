@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
-using UnityEngine.Tilemaps;
+using System.Collections.Generic;
 using UnityEngine.Experimental.Rendering.LWRP;
+using UnityEngine.Tilemaps;
 
 public class ColorChanger : MonoBehaviour
 {
-    public GameObject[] platforms;
-    public Light2D[] lights;
     public Tilemap tilemap;
+
+    public List<GameObject> platforms = new List<GameObject>();
+    public List<Light2D> lights = new List<Light2D>();
 
     [Space]
 
@@ -38,31 +40,27 @@ public class ColorChanger : MonoBehaviour
     
     void ChooseColor()
     {
-        int num = Mathf.FloorToInt(Random.Range(0f, 7f));
+        int num = Mathf.CeilToInt(Random.Range(0f, 6f));
 
-        if (num == 0)
+        if (num == 1)
         {
             chosenColor = Colors.instance.platformRed;
         }
-        if (num == 1)
+        if (num == 2)
         {
             chosenColor = Colors.instance.platformOrange;
         }
-        if (num == 2)
+        if (num == 3)
         {
             chosenColor = Colors.instance.platformYellow;
         }
-        if (num == 3)
+        if (num == 4)
         {
             chosenColor = Colors.instance.platformGreen;
         }
-        if (num == 4)
-        {
-            chosenColor = Colors.instance.platformBlue;
-        }
         if (num == 5)
         {
-            chosenColor = Colors.instance.platformPurple;
+            chosenColor = Colors.instance.platformBlue;
         }
         if (num == 6)
         {
@@ -72,6 +70,8 @@ public class ColorChanger : MonoBehaviour
 
     void SetColor()
     {
+        tilemap.color = chosenColor;
+
         foreach (GameObject platform in platforms)
         {
             platform.GetComponent<SpriteRenderer>().color = chosenColor;
@@ -81,7 +81,5 @@ public class ColorChanger : MonoBehaviour
         {
             light.color = chosenColor;
         }
-
-        tilemap.color = chosenColor;
     }
 }

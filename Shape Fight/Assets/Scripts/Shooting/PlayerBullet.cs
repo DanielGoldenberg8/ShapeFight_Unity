@@ -48,9 +48,12 @@ public class PlayerBullet : MonoBehaviour
 
     void SetVariables()
     {
-        speed = player.bulletSpeed;
-        damage = player.bulletDamage;
-        gravity = player.bulletGravity;
+        if (player != null)
+        {
+            speed = player.bulletSpeed;
+            damage = player.bulletDamage;
+            gravity = player.bulletGravity;
+        }
     }
 
     IEnumerator Deploy()

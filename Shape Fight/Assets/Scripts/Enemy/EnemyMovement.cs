@@ -52,7 +52,7 @@ public class EnemyMovement : MonoBehaviour
 	void FixedUpdate()
 	{
 		grounded = false;
-		Collider2D[] collider = Physics2D.OverlapCircleAll(groundCheck.position, 0.2f, whatIsGround);
+		Collider2D[] collider = Physics2D.OverlapCircleAll(groundCheck.position, 0.4f, whatIsGround);
 
 		for (int i = 0; i < collider.Length; i++)
 		{

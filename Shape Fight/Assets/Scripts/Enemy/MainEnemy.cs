@@ -9,12 +9,14 @@ public class MainEnemy : MonoBehaviour
     private Color color;
     public Color hurtColor;
     public Image healthBar;
-
-    public float minSize;
-    public float maxSize;
     
     public float health;
     private float startHealth;
+
+    public float minSize;
+    public float maxSize;
+
+    public int killScore;
 
     void Start()
     {
@@ -65,11 +67,14 @@ public class MainEnemy : MonoBehaviour
 
     void Die()
     {
+
+        AudioManager.instance.Play("Enemy Death");
+
         AnimationManager.instance.ShakeAnim();
 
         Instantiate(deathEffect, transform.position, Quaternion.identity);
 
-        AudioManager.instance.Play("Enemy Death");
+        Scoreboard.instance.AddScore(killScore);
 
         DropWeapon();
 
@@ -80,6 +85,6 @@ public class MainEnemy : MonoBehaviour
     {
         WeaponDrops.instance.ChooseDrop();
 
-        Instantiate(WeaponDrops.instance.chosenWeapon, transform.position, transform.rotation);
+        Instantiate(WeaponDrops.instance.chosenDrop, transform.position, transform.rotation);
     }
 }

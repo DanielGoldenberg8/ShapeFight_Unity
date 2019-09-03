@@ -30,7 +30,7 @@ public class MessageManager : MonoBehaviour
 
     public void SendMessageToChat(string text, Message.Color color)
     {
-        Invoke("HideMessge", 6f);
+        Invoke("HideMessge", 5f);
 
         Message newMessage = new Message();
 
@@ -48,7 +48,7 @@ public class MessageManager : MonoBehaviour
 
     void HideMessge()
     {
-        Destroy(messageList[0].textObject.gameObject, 6f);
+        Destroy(messageList[0].textObject.gameObject, 5f);
         messageList.Remove(messageList[0]);
     }
 
@@ -91,15 +91,6 @@ public class Message
     public TextMeshProUGUI textObject;
     public string text;
 
-    public enum Color 
-    {
-        white, 
-        blue,
-        red,
-        purple,
-        green,
-        orange,
-        yellow
-    };
+    public enum Color {white, blue, red, purple, green, orange, yellow}
     public Color color;
 }

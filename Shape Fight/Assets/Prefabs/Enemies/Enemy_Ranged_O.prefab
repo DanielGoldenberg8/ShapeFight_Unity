@@ -472,9 +472,10 @@ MonoBehaviour:
     type: 3}
   hurtColor: {r: 0.9843137, g: 0.78039217, b: 0.6901961, a: 1}
   healthBar: {fileID: 1747194444}
+  health: 100
   minSize: 1
   maxSize: 1.4
-  health: 100
+  killScore: 200
 --- !u!114 &8676766075785979043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -494,7 +495,6 @@ MonoBehaviour:
   reloadSpeed: 1.75
   bulletSpeed: 25
   bulletDamage: 20
-  lockedOn: 0
 --- !u!114 &-1355780260299367250
 MonoBehaviour:
   m_ObjectHideFlags: 0

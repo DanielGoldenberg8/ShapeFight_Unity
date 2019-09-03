@@ -736,6 +736,8 @@ MonoBehaviour:
   blastPoint1: {fileID: 136220924}
   blastPoint2: {fileID: 1859818255}
   blastPoint3: {fileID: 1565669723}
+  bulletShot: {fileID: 4744391495768016120, guid: 325973e0a16a54ccc8c63251982a5e2b,
+    type: 3}
   blaster: {fileID: 2102902913}
   bullet: {fileID: 2314028388749427295, guid: d86409fe511534bdf9d69baf27392f40, type: 3}
   pistol: {fileID: 11400000, guid: 9f6bae03ebf6341169f2ed0c799e9a55, type: 2}

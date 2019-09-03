@@ -16,6 +16,6 @@ MonoBehaviour:
   reloadSpeed: 0.5
   bulletSpeed: 27
   recoil: 0
-  gravity: 0.9
+  gravity: 0.95
   sizeX: 0.6
   sizeY: 0.2

@@ -8,6 +8,9 @@ public class EnemySpawning : MonoBehaviour
     public float minY;
     public float maxY;
 
+    public float minSpawnDelay;
+    public float maxSpawnDelay;
+
     private Vector2 spawnPos;
 
     private int spawnDelay;
@@ -29,7 +32,7 @@ public class EnemySpawning : MonoBehaviour
 
             Instantiate(EnemyManager.instance.chosenEnemy, spawnPos, Quaternion.identity);
 
-            float spawnDelay = Random.Range(4f, 6f);
+            float spawnDelay = Random.Range(minSpawnDelay, maxSpawnDelay);
 
             x--;
 
@@ -49,13 +52,13 @@ public class EnemySpawning : MonoBehaviour
 
     void ChooseEnemy()
     {
-        float num = Mathf.Round(Random.Range(0f, 100f));
+        float num = Mathf.CeilToInt(Random.Range(0f, 100f));
 
-        if (num >= 40)
+        if (num <= 60)
         {
             EnemyManager.instance.SetRangedEnemyStats();
         }
-        else if (num >= 0 && num < 40)
+        else
         {
             EnemyManager.instance.SetMeleeEnemyStats();
         }

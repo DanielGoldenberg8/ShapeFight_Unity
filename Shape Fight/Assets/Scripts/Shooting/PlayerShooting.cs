@@ -6,16 +6,17 @@ public class PlayerShooting : MonoBehaviour
     public Transform blastPoint2;
     public Transform blastPoint3;
 
+    public ParticleSystem bulletShot;
+
     public GameObject blaster;
     public GameObject bullet;
 
-    public BulletType pistol;
-    public BulletType rifle;
-    public BulletType shotgun;
-    public BulletType sniper;
-    public BulletType grenade;
+    public WeaponType pistol;
+    public WeaponType rifle;
+    public WeaponType shotgun;
+    public WeaponType sniper;
 
-    public enum Weapon {pistol, rifle, shotgun, sniper, grenadeLauncher};
+    public enum Weapon {pistol, rifle, shotgun, sniper, supergun};
     public Weapon currentWeapon;
 
     private float reloadSpeed;
@@ -64,6 +65,8 @@ public class PlayerShooting : MonoBehaviour
         AudioManager.instance.Play("Shoot");
 
         Instantiate(bullet, blastPoint1.position, blastPoint1.rotation);
+        
+        Instantiate(bulletShot, blastPoint1.position, blastPoint1.rotation);
     }
 
     void ShotgunShoot()
@@ -73,6 +76,8 @@ public class PlayerShooting : MonoBehaviour
         Instantiate(bullet, blastPoint1.position, blastPoint1.rotation);
         Instantiate(bullet, blastPoint2.position, blastPoint2.rotation);
         Instantiate(bullet, blastPoint3.position, blastPoint3.rotation);
+
+        Instantiate(bulletShot, blastPoint1.position, blastPoint1.rotation);
     }
 
     void WeaponToggle()
@@ -96,12 +101,7 @@ public class PlayerShooting : MonoBehaviour
         {
             SetVariables(sniper.reloadSpeed, sniper.bulletSpeed, sniper.damage, sniper.recoil, sniper.gravity,
                 sniper.sizeX, sniper.sizeY);
-        }   
-        else if (currentWeapon == Weapon.grenadeLauncher)
-        {
-            SetVariables(grenade.reloadSpeed, grenade.bulletSpeed, grenade.damage, grenade.recoil, grenade.gravity,
-                grenade.sizeX, grenade.sizeY);
-        }   
+        }    
     }
 
     void SetVariables(float reload, float speed, float damage, float recoil, float gravity, float sizeX, float sizeY)
