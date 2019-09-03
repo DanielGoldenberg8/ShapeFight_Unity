@@ -33,8 +33,6 @@ public class PlayerShooting : MonoBehaviour
     {
         WeaponToggle();
 
-        WeaponSelect();
-
         SetBlasterSize();
 
         if (reloadTimer > 0)
@@ -75,40 +73,6 @@ public class PlayerShooting : MonoBehaviour
         Instantiate(bullet, blastPoint1.position, blastPoint1.rotation);
         Instantiate(bullet, blastPoint2.position, blastPoint2.rotation);
         Instantiate(bullet, blastPoint3.position, blastPoint3.rotation);
-    }
-
-    void WeaponSelect()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            currentWeapon = Weapon.pistol;
-
-            MessageManager.instance.SendMessageToChat("Pistol selected", Message.Color.blue);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            currentWeapon = Weapon.rifle;
-
-            MessageManager.instance.SendMessageToChat("Assault rifle selected", Message.Color.blue);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            currentWeapon = Weapon.shotgun;
-
-            MessageManager.instance.SendMessageToChat("Shotgun selected", Message.Color.blue);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            currentWeapon = Weapon.sniper;
-
-            MessageManager.instance.SendMessageToChat("Sniper selected", Message.Color.blue);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha5))
-        {
-            currentWeapon = Weapon.grenadeLauncher;
-
-            MessageManager.instance.SendMessageToChat("SUPER GUN selected", Message.Color.yellow);
-        }
     }
 
     void WeaponToggle()
