@@ -25,24 +25,27 @@ public class EnemyMovement : MonoBehaviour
 
 	void Update()
 	{	
-		Vector3 relativePlayerPos = transform.InverseTransformPoint(player.position);
-
-		float distance = Vector2.Distance(transform.position, player.position);
-
-		if ((distance >= maxDistance) && grounded)
+		if (player != null)
 		{
-			if (relativePlayerPos.x > 0.0)
+			Vector3 relativePlayerPos = transform.InverseTransformPoint(player.position);
+
+			float distance = Vector2.Distance(transform.position, player.position);
+
+			if ((distance >= maxDistance) && grounded)
 			{
-				rb.velocity = transform.right * movementSpeed * Time.deltaTime;
+				if (relativePlayerPos.x > 0.0)
+				{
+					rb.velocity = transform.right * movementSpeed * Time.deltaTime;
+				}
+				else if (relativePlayerPos.x < 0.0)
+				{
+					rb.velocity = -transform.right * movementSpeed * Time.deltaTime;
+				}
 			}
-			else if (relativePlayerPos.x < 0.0)
+			else if ((distance <= maxDistance) && grounded)
 			{
-				rb.velocity = -transform.right * movementSpeed * Time.deltaTime;
+				rb.velocity = transform.right * 0;
 			}
-		}
-		else if ((distance <= maxDistance) && grounded)
-		{
-			rb.velocity = transform.right * 0;
 		}
 	}
 
