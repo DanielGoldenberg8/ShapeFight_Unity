@@ -12,8 +12,6 @@ public class RangedEnemy : MonoBehaviour
     public float reloadSpeed;
     public float bulletSpeed;
     public float bulletDamage;
-
-    public bool lockedOn;
     
     private float reloadTimer;
 
@@ -37,31 +35,12 @@ public class RangedEnemy : MonoBehaviour
             reloadTimer = 0;
         }
 
-        if (lockedOn)
+        if (reloadTimer == 0)
         {
-            if (reloadTimer == 0)
-            {
-                reloadTimer = reloadSpeed;
-                Shoot();
-            }
+            reloadTimer = reloadSpeed;
+            Shoot();
         }
-    }
-
-    void FixedUpdate()
-    {
-        RaycastHit2D hitInfo = Physics2D.Raycast(blastPoint.position, transform.right);
-
-        if (hitInfo)
-        {
-            if (hitInfo.transform.CompareTag("Player"))
-            {
-                lockedOn = true;
-            }
-            else 
-            {
-                lockedOn = false;
-            }
-        }
+    
     }
 
     void RotateBlaster()

@@ -5,6 +5,7 @@ using System.Collections;
 public class Player : MonoBehaviour
 {
 	public string playerName;
+	private int playerID;
 
 	public ParticleSystem deathEffect;
 	private SpriteRenderer currentColor;
@@ -26,8 +27,13 @@ public class Player : MonoBehaviour
 	{
 		if (playerName == "")
 		{
-			playerName = "Player 1";
+			playerName = "Player";
 		}
+
+		playerID = Random.Range(0, 1000);
+
+		print(playerName);
+		print(playerID);
 	}
 
 	void Start()

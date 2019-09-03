@@ -71,6 +71,15 @@ public class MainEnemy : MonoBehaviour
 
         AudioManager.instance.Play("Enemy Death");
 
+        DropWeapon();
+
         Destroy(gameObject);
+    }
+
+    void DropWeapon()
+    {
+        WeaponDrops.instance.ChooseDrop();
+
+        Instantiate(WeaponDrops.instance.chosenWeapon, transform.position, transform.rotation);
     }
 }

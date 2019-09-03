@@ -6,7 +6,9 @@ public class PlayerMovement : MonoBehaviour
 	public Transform groundCheck;
 	public LayerMask whatIsGround;
 	public float jumpHeight = 200f;
-	public float movementSpeed = 60f * 10; 
+	public float movementSpeed = 60f * 10;
+
+	public float radius; 
 
 	private Rigidbody2D rb;
 	private Vector3 velocity = Vector3.zero;
@@ -26,9 +28,6 @@ public class PlayerMovement : MonoBehaviour
 
 	void Update()
 	{
-		rb.velocity = new Vector2(Input.GetAxis("Horizontal") * movementSpeed * Time.deltaTime, rb.velocity.y);
-		rb.velocity = Vector3.SmoothDamp(rb.velocity, rb.velocity, ref velocity , smoothing);
-
 		groundedRemember -= Time.deltaTime;
 
 		if (grounded)
@@ -46,8 +45,11 @@ public class PlayerMovement : MonoBehaviour
 
 	void FixedUpdate()
 	{
+		rb.velocity = new Vector2(Input.GetAxis("Horizontal") * movementSpeed * Time.deltaTime, rb.velocity.y);
+		rb.velocity = Vector3.SmoothDamp(rb.velocity, rb.velocity, ref velocity , smoothing);
+
 		grounded = false;
-		Collider2D[] collider1 = Physics2D.OverlapCircleAll(groundCheck.position, 0.2f, whatIsGround);
+		Collider2D[] collider1 = Physics2D.OverlapCircleAll(groundCheck.position, radius, whatIsGround);
 
 		for (int i = 0; i < collider1.Length; i++)
 		{
