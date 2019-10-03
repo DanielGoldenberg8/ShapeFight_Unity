@@ -6,8 +6,8 @@ public class Player : MonoBehaviour
 {
 	public string playerName;
 
-	private Color color = Color.black;
-	private Color hurtColor = Color.white;
+	public Color mainColor = Color.white;
+	public Color hurtColor = Color.black;
 	public float startingHealth;
 
 	public ParticleSystem deathEffect;
@@ -78,10 +78,10 @@ public class Player : MonoBehaviour
     {
         currentColor.color = hurtColor;
         yield return new WaitForSeconds(0.1f);
-        currentColor.color = color;
+        currentColor.color = mainColor;
     }
 
-	void Die()
+	public void Die()
 	{
 		isDead = true;
 
@@ -106,7 +106,7 @@ public class Player : MonoBehaviour
 
 		transform.position = spawnPoint.transform.position;
 
-		currentColor.color = color;
+		currentColor.color = mainColor;
 
 		gameObject.SetActive(true);
 	}

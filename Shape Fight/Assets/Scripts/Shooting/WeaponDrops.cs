@@ -32,7 +32,7 @@ public class WeaponDrops : MonoBehaviour
 
         if (num <= 25)
         {
-            int weapon = Mathf.CeilToInt(Random.Range(1f, 4f));
+            int weapon = Mathf.CeilToInt(Random.Range(0f, 4f));
 
             if (weapon == 1)
             {

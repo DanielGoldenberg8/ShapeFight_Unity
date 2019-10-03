@@ -123,7 +123,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &150619560
 RectTransform:
   m_ObjectHideFlags: 0
@@ -651,7 +651,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!61 &57937991590518490
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -691,11 +691,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerName: Daniel
+  mainColor: {r: 0, g: 0, b: 0, a: 1}
+  hurtColor: {r: 0.9843137, g: 1, b: 1, a: 1}
+  startingHealth: 100
   deathEffect: {fileID: 3043361898633080310, guid: 704b28ddd7ae6446a9c68f7daf9d6572,
     type: 3}
-  color: {r: 0, g: 0, b: 0, a: 1}
-  hurtColor: {r: 0.5803922, g: 0.5803922, b: 0.5803922, a: 1}
-  startingHealth: 100
   health: 100
   isDead: 0
   healthBar: {fileID: 1632302857}
@@ -744,7 +744,6 @@ MonoBehaviour:
   rifle: {fileID: 11400000, guid: 9fbbbe4a85d5a4b97bc75b8448ae440a, type: 2}
   shotgun: {fileID: 11400000, guid: 34d9aa6ff6dac4d85af8a81e57816578, type: 2}
   sniper: {fileID: 11400000, guid: a06c36f356deb493494500e338f260f2, type: 2}
-  grenade: {fileID: 11400000, guid: cb1b47dafaf6a4e0ca78ce0a8b5fa755, type: 2}
   currentWeapon: 0
   bulletSpeed: 30
   bulletDamage: 0

@@ -24,7 +24,7 @@ public class EnemyMovement : MonoBehaviour
 	}
 
 	void Update()
-	{	
+	{
 		if (player != null)
 		{
 			Vector3 relativePlayerPos = transform.InverseTransformPoint(player.position);

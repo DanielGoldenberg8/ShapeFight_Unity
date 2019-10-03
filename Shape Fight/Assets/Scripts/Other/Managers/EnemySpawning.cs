@@ -11,14 +11,24 @@ public class EnemySpawning : MonoBehaviour
     public float minSpawnDelay;
     public float maxSpawnDelay;
 
+    private GameObject player;
+
     private Vector2 spawnPos;
 
     private int spawnDelay;
     private int x = 1;
 
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+
     void Update()
     {   
-        StartCoroutine(SpawnEnemy());
+        if (player != null)
+        {
+            StartCoroutine(SpawnEnemy());
+        }
     }
 
     IEnumerator SpawnEnemy()

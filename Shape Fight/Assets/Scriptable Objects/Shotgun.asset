@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afbb6271b77874809a1cb2a293ef6f49, type: 3}
   m_Name: Shotgun
   m_EditorClassIdentifier: 
+  sprite: {fileID: -7349882584872989000, guid: 7ce494b38b3164233ae4ec0138fa9486, type: 3}
   damage: 35
-  reloadSpeed: 1
+  reloadSpeed: 1.25
   bulletSpeed: 25
   recoil: 0
   gravity: 0.9
-  sizeX: 0.65
-  sizeY: 0.35
+  sizeX: 1.1
+  sizeY: 1.1

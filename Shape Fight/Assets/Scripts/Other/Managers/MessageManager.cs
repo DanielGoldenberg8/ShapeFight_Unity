@@ -80,7 +80,7 @@ public class MessageManager : MonoBehaviour
                 color = Colors.instance.yellow;
                 break;
         }
-
+        
         return color;
     }
 }

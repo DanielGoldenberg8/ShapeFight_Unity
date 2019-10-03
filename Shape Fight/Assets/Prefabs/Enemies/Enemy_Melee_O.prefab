@@ -493,7 +493,7 @@ MonoBehaviour:
   health: 100
   minSize: 1.2
   maxSize: 1.6
-  killScore: 400
+  killScore: 450
 --- !u!114 &1121565563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -506,7 +506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecbbb1a1ba7cf477a9f416bd36ac5ed9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 45
+  damage: 40
   deathEffect: {fileID: 8385457844028546463, guid: b950981259f3748c0a2153aeaa23704d,
     type: 3}
 --- !u!114 &-1148837227876057672

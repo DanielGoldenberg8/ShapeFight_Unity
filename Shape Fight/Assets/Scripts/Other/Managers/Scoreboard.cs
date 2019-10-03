@@ -41,21 +41,26 @@ public class Scoreboard : MonoBehaviour
         totalScore -= score;
     }
 
+    public void MultiplyScore(int score)
+    {
+        totalScore *= score;
+    }
+
     void SetScoreColor()
     {
         if (totalScore >= 7500)
         {
             scoreText.color = Colors.instance.red;
         }
-        else if (totalScore >= 3000)
+        else if (totalScore >= 3500)
         {
             scoreText.color = Colors.instance.purple;
         }
-        else if (totalScore >= 1000)
+        else if (totalScore >= 1500)
         {
             scoreText.color = Colors.instance.blue;
         }
-        else if (totalScore >= 500)
+        else if (totalScore >= 750)
         {
             scoreText.color = Colors.instance.green;
         }

@@ -2,7 +2,6 @@
 
 public class PlayerMovement : MonoBehaviour
 {
-	public KeyCode jump;
 	public Transform groundCheck;
 	public LayerMask whatIsGround;
 	public float jumpHeight = 200f;

@@ -65,7 +65,7 @@ public class MainEnemy : MonoBehaviour
         currentColor.color = color;
     }
 
-    void Die()
+    public void Die()
     {
 
         AudioManager.instance.Play("Enemy Death");

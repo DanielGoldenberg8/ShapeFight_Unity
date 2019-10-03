@@ -616,7 +616,7 @@ MonoBehaviour:
   health: 100
   minSize: 1.5
   maxSize: 1.75
-  killScore: 300
+  killScore: 350
 --- !u!114 &5861856673165004586
 MonoBehaviour:
   m_ObjectHideFlags: 0

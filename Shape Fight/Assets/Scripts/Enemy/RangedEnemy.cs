@@ -24,23 +24,25 @@ public class RangedEnemy : MonoBehaviour
 
     void Update()
     {
-        RotateBlaster();
+        if (player != null)
+        {
+            RotateBlaster();
 
-        if (reloadTimer > 0)
-        {
-            reloadTimer -= Time.deltaTime;
-        }
-        else if (reloadTimer < 0)
-        {
-            reloadTimer = 0;
-        }
+            if (reloadTimer > 0)
+            {
+                reloadTimer -= Time.deltaTime;
+            }
+            else if (reloadTimer < 0)
+            {
+                reloadTimer = 0;
+            }
 
-        if (reloadTimer == 0)
-        {
-            reloadTimer = reloadSpeed;
-            Shoot();
+            if (reloadTimer == 0)
+            {
+                reloadTimer = reloadSpeed;
+                Shoot();
+            }
         }
-    
     }
 
     void RotateBlaster()
