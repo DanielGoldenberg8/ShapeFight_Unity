@@ -1,3 +1,3 @@
-# ShapeFight_Unity
+# ShapeFight
 
-My first game!
+My first Unity game!
